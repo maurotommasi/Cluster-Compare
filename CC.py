@@ -42,7 +42,7 @@ class CC:
             for cc_analysis in _cc_list_analysis:
                 analysis_name, cc_analysis_data = cc_analysis
                 compare_df = pd.merge(compare_df, cc_analysis_data, on=['Behavior', 'Value'], how='left')
-                compare_df[f'Avarage {self.cc_name}/{analysis_name}'] = self.analysis[f'Index T/P {self.cc_name}'] / cc_analysis_data[f'Index T/P {analysis_name}']
+                compare_df[f'Leverage {self.cc_name}/{analysis_name}'] = self.analysis[f'Index T/P {self.cc_name}'] / cc_analysis_data[f'Index T/P {analysis_name}']
             self.compare_data = compare_df
             return compare_df
         else:
@@ -50,7 +50,7 @@ class CC:
             return None, None
     
     def getFeatures(self, _thresholds):
-        average_cols = [selected_col for selected_col in self.compare_data.columns if selected_col.startswith('Avarage')]
+        average_cols = [selected_col for selected_col in self.compare_data.columns if selected_col.startswith('Leverage')]
         condition = None
 
         # Iterate through thresholds and apply conditions
