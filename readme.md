@@ -28,7 +28,7 @@ ClusterCompare is a Python library designed for comparative analysis of behavior
 - **Comparative Analysis**: Compare behavioral data between different instances of ClusterCompare.
 
     ```python
-    cc_list = [cc_instance1, cc_instance2, cc_instance3]
+    cc_list = [cc_instance1.getAnalysis(), cc_instance2.getAnalysis(), cc_instance3.getAnalysis()]
     compare_data = cc_instance.compare(cc_list)
 
 - **Feature Selection**: Filter the comparative dataset based on specific thresholds.
